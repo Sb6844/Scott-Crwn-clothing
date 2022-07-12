@@ -3,6 +3,7 @@ import { createAuthUserWithEmailAndPassword } from '../../utils/firebase/firebas
 import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import Button from '../button/button.component';
 
+
 import FormInput from '../form-input/form-input.component';
 
 import './sign-up-form.styles.scss'
@@ -17,7 +18,6 @@ const defaultFormFields = {
 const SigUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword} = formFields;
-
 
     const resetFormField = () => {
         setFormFields(defaultFormFields);
@@ -46,7 +46,6 @@ const SigUpForm = () => {
 
     const handleChange = (event) => {
         const {name, value} = event.target;
-        console.log(event.target);
         setFormFields({...formFields, [name]: value});
     }
 
