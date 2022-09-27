@@ -14,7 +14,7 @@ import { CartDropdownContext } from "../../contexts/cart-dropdown.context";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { cartDropdownProps } = useContext(CartDropdownContext);
+  const { isCartOpen } = useContext(CartDropdownContext);
     return (
       <Fragment>
         <div className="navigation">
@@ -36,7 +36,7 @@ const Navigation = () => {
                 <CartIcon/>
             </div>
             {
-              cartDropdownProps.viewable && <CartDropdown></CartDropdown>
+              isCartOpen && <CartDropdown></CartDropdown>
             }
         </div>
         <Outlet></Outlet>
